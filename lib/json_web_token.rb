@@ -1,4 +1,4 @@
-require 'jwt'
+require "jwt"
 
 # Encode and decode payloads using 'jwt'
 class JsonWebToken

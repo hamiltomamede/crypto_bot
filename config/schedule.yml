@@ -1,0 +1,4 @@
+:schedule:
+  update_sentiments:
+    cron: "0 * * * *" # a cada hora
+    class: "SentimentBatchWorker"
