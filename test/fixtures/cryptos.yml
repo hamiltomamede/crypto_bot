@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  symbol: MyString
+  market_cap: 1
+  volume: 1
+  rsi: 1.5
+  sentiment: 1.5
+  score: 1.5
+
+two:
+  name: MyString
+  symbol: MyString
+  market_cap: 1
+  volume: 1
+  rsi: 1.5
+  sentiment: 1.5
+  score: 1.5

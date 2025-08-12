@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_31_153544) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_22_002057) do
   create_table "bots", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "symbol"
@@ -22,6 +22,21 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_31_153544) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_bots_on_user_id"
+  end
+
+  create_table "cryptos", force: :cascade do |t|
+    t.string "name"
+    t.string "symbol"
+    t.integer "market_cap"
+    t.integer "volume"
+    t.float "rsi"
+    t.float "sentiment"
+    t.float "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.decimal "price"
+    t.float "price_change_24h"
   end
 
   create_table "payments", force: :cascade do |t|

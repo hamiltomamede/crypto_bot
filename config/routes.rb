@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :users
       resources :bots
       resources :payments
+      resources :cryptos, only: [ :index, :show ]
     end
   end
 
