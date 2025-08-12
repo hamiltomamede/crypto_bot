@@ -10,12 +10,18 @@ Rails.application.routes.draw do
       post "login", to: "auth#login"
       delete "logout", to: "auth#logout", via: :delete
       resources :users
-      resources :bots
-      resources :payments
-      resources :cryptos, only: [ :index, :show ]
+      resources :companies do
+        resources :users
+        resources :bots
+        resources :payments
+        resources :cryptos, only: [ :index, :show ]
+        resources :products
+        resources :orders do
+          resources :order_items
+        end
+      end
     end
   end
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+
 end

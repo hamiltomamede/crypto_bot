@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :password
       t.string :password_digest
       t.string :remember_token
-      t.string :role, default: 'user'
+      t.integer :role, default: 0, null: false
       t.boolean :active, default: true
 
       t.timestamps

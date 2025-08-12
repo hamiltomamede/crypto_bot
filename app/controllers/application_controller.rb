@@ -39,7 +39,7 @@ class ApplicationController < ActionController::API
     end
 
     def current_user_role
-      if current_user.role == "admin"
+      if current_user&.admin?
         :full_admin
       else
         :normal

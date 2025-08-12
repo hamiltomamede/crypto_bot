@@ -31,7 +31,7 @@ module Api
         end
 
         def authorize_show(resource)
-          return if current_user.role == "admin"
+          return if current_user&.admin?
 
           if resource.is_a?(Circuit)
             if resource.id != current_user.circuit_id
@@ -47,7 +47,7 @@ module Api
         end
 
         def authorize_admin_actions
-          return if current_user.role == "admin"
+          return if current_user&.admin?
 
           render json: { error: "Access denied" }, status: :forbidden
         end
