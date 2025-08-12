@@ -4,6 +4,11 @@ class User < ApplicationRecord
 
   has_many :bots
   has_many :payments
+  has_many :orders, dependent: :nullify
+
+  belongs_to :company
+
+  enum role: { normal: 0, admin: 1 }
 
   has_secure_password
   before_save { |user| user.email = email.downcase }

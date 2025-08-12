@@ -9,6 +9,25 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+puts "Limpando banco..."
+Bot.delete_all
+User.delete_all
+Company.delete_all
 
-User.create!(name: 'user test', email: 'test@mail.com', password: 'P4ssw0rd',
-              role: 'admin')
+puts "Criando empresas..."
+company1 = Company.create!(name: "HM Tech", email:"company@mail.com")
+
+puts "Criando usuários..."
+
+user1 = User.create!(
+  name: 'user test',
+  email: 'test@mail.com',
+  password: 'P4ssw0rd',
+  role: :admin,
+  company: company1
+)
+
+
+puts "Seeds criados com sucesso!"
+
